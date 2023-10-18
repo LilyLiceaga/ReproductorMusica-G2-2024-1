@@ -1,6 +1,6 @@
 ﻿namespace ReproductorMusica_G2_2024_1
 {
-    partial class Form1
+    partial class FormReproductor
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReproductor));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +53,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(507, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 270);
+            this.pictureBox1.Size = new System.Drawing.Size(268, 284);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -83,29 +84,29 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(311, 80);
+            this.label4.Location = new System.Drawing.Point(312, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 10);
+            this.label4.Size = new System.Drawing.Size(136, 53);
             this.label4.TabIndex = 0;
             this.label4.Text = "David Bowie";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(311, 144);
+            this.label5.Location = new System.Drawing.Point(312, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 22);
+            this.label5.Size = new System.Drawing.Size(137, 48);
             this.label5.TabIndex = 0;
             this.label5.Text = "Moonage Daydream";
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(311, 204);
+            this.label6.Location = new System.Drawing.Point(312, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 23);
+            this.label6.Size = new System.Drawing.Size(137, 51);
             this.label6.TabIndex = 0;
             this.label6.Text = "The Rise and Fall of Ziggy Stardust and the Spiders from Mars";
             // 
-            // Form1
+            // FormReproductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +119,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormReproductor";
+            this.Text = "Reproductor de Musica";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
