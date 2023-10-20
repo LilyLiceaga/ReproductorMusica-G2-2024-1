@@ -34,6 +34,7 @@ namespace ReproductorMusica_G2_2024_1
             {
                 Musica musica = (Musica)cancion;
                 lstbCanciones.Items.Add(musica.Titulo);
+                //lstbCanciones.Items.Clear(musica.Titulo);
             }
         }
 
@@ -43,6 +44,18 @@ namespace ReproductorMusica_G2_2024_1
             lbTitulo.Text = musica.Titulo;   
             lbArtista.Text = musica.Artista;   
             lbAlbum.Text = musica.Album;   
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregar formAgregar = new FormAgregar();
+            formAgregar.EnviarMusica += AgregarCancion;
+            formAgregar.ShowDialog();
+        }
+        public void AgregarCancion(Musica musica)
+        {
+            canciones.Add(musica);
+            lstbCanciones.Items.Add(musica.Titulo);
         }
     }
 }

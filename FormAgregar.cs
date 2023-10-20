@@ -12,9 +12,19 @@ namespace ReproductorMusica_G2_2024_1
 {
     public partial class FormAgregar : Form
     {
+        public delegate void DelegateMusica(Musica musica);
+        public event DelegateMusica EnviarMusica;
         public FormAgregar()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            EnviarMusica(new Musica(txtbArtista.Text, txtbTitulo.Text, txtbAlbum.Text));
+            txtbAlbum.Clear();
+            txtbTitulo.Clear();
+            txtbArtista.Clear();
         }
     }
 }

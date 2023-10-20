@@ -61,6 +61,9 @@
     <Compile Include="Musica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregar.resx">
+      <DependentUpon>FormAgregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReproductor.resx">
       <DependentUpon>FormReproductor.cs</DependentUpon>
     </EmbeddedResource>
