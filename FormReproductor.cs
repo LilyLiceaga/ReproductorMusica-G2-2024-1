@@ -23,14 +23,20 @@ namespace ReproductorMusica_G2_2024_1
 
         private void CargarCanciones()
         {
+            lstbCanciones.Items.Clear();
             canciones.Add(new Musica("Peso Pluma", "Lady Gaga", "Génesis"));
             canciones.Add(new Musica("Michael Jackson", "Thriller", "Thriller"));
+            canciones.Add(new Musica("Queen", "Somebody to Love", "A Day at the Races"));
+            canciones.Add(new Musica("Hozier", "Would That I", "Wasteland, Baby!"));
+            canciones.Add(new Musica("Édith Piaf", "La Vie En Rose", "Chansons Parisiennes"));
         }
 
         private void cargarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CargarCanciones();
-            foreach(object cancion in canciones)
+
+
+            foreach (object cancion in canciones)
             {
                 Musica musica = (Musica)cancion;
                 lstbCanciones.Items.Add(musica.Titulo);
