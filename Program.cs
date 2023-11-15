@@ -16,7 +16,7 @@ namespace ReproductorMusica_G2_2024_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormReproductor());
+            Application.Run(new FormReproductor());
         }
     }
 }

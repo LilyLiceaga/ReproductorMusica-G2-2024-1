@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReproductor));
             this.lstbCanciones = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reproducirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pausaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbDuracion = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbInicio = new System.Windows.Forms.Label();
+            this.lbFinal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +61,7 @@
             // lstbCanciones
             // 
             this.lstbCanciones.FormattingEnabled = true;
-            this.lstbCanciones.Location = new System.Drawing.Point(67, 52);
+            this.lstbCanciones.Location = new System.Drawing.Point(70, 52);
             this.lstbCanciones.Name = "lstbCanciones";
             this.lstbCanciones.Size = new System.Drawing.Size(146, 290);
             this.lstbCanciones.TabIndex = 0;
@@ -128,11 +137,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Thistle;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem});
+            this.archivoToolStripMenuItem,
+            this.reproducirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,15 +186,79 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // reproducirToolStripMenuItem
+            // 
+            this.reproducirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playToolStripMenuItem,
+            this.stopToolStripMenuItem,
+            this.pausaToolStripMenuItem});
+            this.reproducirToolStripMenuItem.Name = "reproducirToolStripMenuItem";
+            this.reproducirToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.reproducirToolStripMenuItem.Text = "Reproducir";
+            // 
+            // playToolStripMenuItem
+            // 
+            this.playToolStripMenuItem.Name = "playToolStripMenuItem";
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.playToolStripMenuItem.Text = "Play";
+            this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.stopToolStripMenuItem.Text = "Stop";
+            // 
+            // pausaToolStripMenuItem
+            // 
+            this.pausaToolStripMenuItem.Name = "pausaToolStripMenuItem";
+            this.pausaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.pausaToolStripMenuItem.Text = "Pausa";
+            // 
+            // pbDuracion
+            // 
+            this.pbDuracion.BackColor = System.Drawing.Color.Blue;
+            this.pbDuracion.Location = new System.Drawing.Point(507, 368);
+            this.pbDuracion.Name = "pbDuracion";
+            this.pbDuracion.Size = new System.Drawing.Size(268, 15);
+            this.pbDuracion.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbInicio
+            // 
+            this.lbInicio.AutoSize = true;
+            this.lbInicio.Location = new System.Drawing.Point(457, 368);
+            this.lbInicio.Name = "lbInicio";
+            this.lbInicio.Size = new System.Drawing.Size(27, 13);
+            this.lbInicio.TabIndex = 5;
+            this.lbInicio.Text = "0 [s]";
+            // 
+            // lbFinal
+            // 
+            this.lbFinal.AutoSize = true;
+            this.lbFinal.Location = new System.Drawing.Point(793, 368);
+            this.lbFinal.Name = "lbFinal";
+            this.lbFinal.Size = new System.Drawing.Size(31, 13);
+            this.lbFinal.TabIndex = 6;
+            this.lbFinal.Text = " 4:30";
             // 
             // FormReproductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.Controls.Add(this.lbFinal);
+            this.Controls.Add(this.lbInicio);
+            this.Controls.Add(this.pbDuracion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbAlbum);
             this.Controls.Add(this.lbTitulo);
@@ -224,6 +299,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem cargarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ProgressBar pbDuracion;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbInicio;
+        private System.Windows.Forms.Label lbFinal;
+        private System.Windows.Forms.ToolStripMenuItem reproducirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pausaToolStripMenuItem;
     }
 }
 
