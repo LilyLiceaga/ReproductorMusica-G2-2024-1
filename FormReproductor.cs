@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using System.Net.Http.Headers;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace ReproductorMusica_G2_2024_1
 {
@@ -89,5 +92,44 @@ namespace ReproductorMusica_G2_2024_1
         {
             timer1.Start();
         }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfDialog = new SaveFileDialog();
+
+            FileStream fs = null;
+            StreamWriter sw = null;
+
+            sfDialog.Filter = ".csv|] .csv ";
+
+            if (sfDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    fs = new FileStream(sfDialog.FileName, FileMode.Create, FileAccess.Write);
+                    sw = new StreamWriter(fs);
+                    sw.WriteLine("Artista, Album, Titulo y Duración");
+                    foreach (Musica musica in canciones)
+                    {
+                        sw.WriteLine(String.Format("{0}, {1}, {2},{3}", musica.Artista, musica.Album, musica.Titulo, musica.Duracion));
+
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+
+                }
+                finally
+                {
+                    sw.Close();
+                    fs.Close();
+
+                } 
+
+            }
+        }
     }
+
+
 }
