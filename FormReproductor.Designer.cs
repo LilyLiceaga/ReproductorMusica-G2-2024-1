@@ -267,6 +267,7 @@
             this.topTenToolStripMenuItem.Name = "topTenToolStripMenuItem";
             this.topTenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.topTenToolStripMenuItem.Text = "Top Ten";
+            this.topTenToolStripMenuItem.Click += new System.EventHandler(this.topTenToolStripMenuItem_Click);
             // 
             // FormReproductor
             // 
@@ -287,6 +288,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lstbCanciones);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormReproductor";
             this.Text = "Reproductor de Musica";

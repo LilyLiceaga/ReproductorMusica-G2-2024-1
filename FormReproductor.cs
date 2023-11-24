@@ -128,7 +128,11 @@ namespace ReproductorMusica_G2_2024_1
 
             }
         }
+
+        private void topTenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTopTen formTopTen = new FormTopTen();
+            formTopTen.ShowDialog();
+        }
     }
-
-
 }
